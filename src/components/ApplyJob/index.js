@@ -24,7 +24,7 @@ class ApplyJob extends Component {
 
   fetchJobDetails = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/jobs/${this.props.jobId}`);
+      const res = await fetch(`https://rebootxbackend.onrender.com/jobs/${this.props.jobId}`);
       if (!res.ok) throw new Error("Job not found");
 
       const job = await res.json();
@@ -49,7 +49,7 @@ class ApplyJob extends Component {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/jobs/apply", {
+      const res = await fetch("https://rebootxbackend.onrender.com/jobs/apply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

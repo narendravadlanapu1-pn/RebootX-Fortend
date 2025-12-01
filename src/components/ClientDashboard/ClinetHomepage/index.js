@@ -18,7 +18,7 @@ class ClientHomepage extends Component {
         localStorage.getItem("role") === "client" ? "client123" : null;
 
       const res = await fetch(
-        `http://localhost:5000/applications?clientId=${clientId}`
+        `https://rebootxbackend.onrender.com/applications?clientId=${clientId}`
       );
 
       if (!res.ok) throw new Error("Failed to fetch applications");

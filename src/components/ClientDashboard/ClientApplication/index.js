@@ -6,7 +6,7 @@ class MyApplications extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch("http://localhost:5000/my-applications");
+      const res = await fetch("https://rebootxbackend.onrender.com/my-applications");
       const data = await res.json();
       this.setState({ applications: data, loading: false });
     } catch (error) {

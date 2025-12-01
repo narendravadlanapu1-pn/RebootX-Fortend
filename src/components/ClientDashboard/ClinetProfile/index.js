@@ -17,7 +17,7 @@ class ClientProfile extends Component {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/user/${userId}`);
+      const res = await fetch(`https://rebootxbackend.onrender.com/user/${userId}`);
       const data = await res.json();
       this.setState({ user: data, loading: false });
     } catch (error) {
