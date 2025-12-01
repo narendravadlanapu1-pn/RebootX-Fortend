@@ -1,0 +1,121 @@
+/* Search + Filter Container */
+.jobs-filter-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+}
+
+/* Search Bar */
+.search-input {
+  padding: 10px 14px;
+  width: 260px;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.search-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.4);
+}
+
+/* Dropdown Filters */
+.filter-select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 2px solid #d1d5db;
+  background: white;
+  outline: none;
+  transition: 0.2s;
+}
+
+.filter-select:focus {
+  border-color: #6d28d9;
+  box-shadow: 0 0 6px rgba(109, 40, 217, 0.4);
+}
+
+/* Job Card */
+.job-card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+  transition: 0.3s;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* Apply Button */
+.job-apply-btn {
+  background: linear-gradient(90deg, #4f46e5, #9333ea);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: none;
+  transition: 0.25s;
+}
+
+.job-apply-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .jobs-filter-container {
+    justify-content: center;
+  }
+  .search-input {
+    width: 100%;
+  }
+}
+/* JOBS PAGE HERO */
+.jobs-hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  color: #ffffff;
+}
+
+.jobs-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.jobs-subtitle {
+  font-size: 18px;
+  opacity: 0.9;
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .jobs-title {
+    font-size: 36px;
+  }
+  .jobs-subtitle {
+    font-size: 16px;
+  }
+}
+
+.loding{
+  color: #4f46e5;
+  font-family: Bree serif;
+  text-align: center;
+  align-items: center;
+  font-weight: bold; 
+  font-size: 32px;
+}

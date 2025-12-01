@@ -1,0 +1,49 @@
+/* Dashboard Layout */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background: #f5f7fa;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: #1e1e2f;
+  padding: 25px 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+}
+
+.sidebar-link {
+  text-decoration: none;
+  color: #cfcfcf;
+  font-size: 18px;
+  padding: 12px 15px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.sidebar-link:hover {
+  background: #3b3b55;
+  color: #fff;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  background: #ffffff;
+  border-left: 1px solid #ddd;
+}

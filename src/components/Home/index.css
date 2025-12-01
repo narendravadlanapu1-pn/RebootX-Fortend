@@ -1,0 +1,76 @@
+/* ===========================
+   HOME SECTION
+=========================== */
+
+.home-section {
+  height: 92vh;
+  background: linear-gradient(90deg, #3b82f6, #6d28d9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Title */
+.home-title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.home-title span {
+  color: #f9fafb;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Subtitle */
+.home-subtitle {
+  font-size: 20px;
+  opacity: 0.9;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+/* Button */
+.home-btn {
+  background-color: #ffffff;
+  color: #3b82f6;
+  font-size: 18px;
+  padding: 12px 35px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+
+.home-btn:hover {
+  background-color: #e2e8f0;
+  transform: translateY(-3px);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 34px;
+  }
+
+  .home-subtitle {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-title {
+    font-size: 28px;
+  }
+
+  .home-btn {
+    font-size: 16px;
+    padding: 10px 28px;
+  }
+}

@@ -1,0 +1,139 @@
+/* ---------------------------- */
+/* APPLY JOB PAGE UI DESIGN     */
+/* ---------------------------- */
+
+.apply-container {
+  max-width: 850px;
+  margin: 60px auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Job Info */
+.apply-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.apply-company {
+  font-size: 20px;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.apply-location {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.apply-desc {
+  font-size: 17px;
+  color: #444;
+  line-height: 1.6;
+  margin-top: 20px;
+  border-left: 4px solid #4f46e5;
+  padding-left: 12px;
+}
+
+/* Form Title */
+.apply-form-title {
+  font-size: 26px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Form */
+.apply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.apply-form input,
+.apply-form textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.apply-form input:focus,
+.apply-form textarea:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+}
+
+.apply-form textarea {
+  height: 130px;
+  resize: vertical;
+}
+
+/* Button */
+.apply-btn {
+  background: linear-gradient(90deg, #4f46e5, #3b82f6);
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.apply-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* Success Message */
+.success-msg {
+  margin-top: 10px;
+  color: green;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* Error */
+.error-msg {
+  margin-top: 10px;
+  color: red;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* ---------------------------- */
+/* RESPONSIVE DESIGN            */
+/* ---------------------------- */
+
+@media (max-width: 768px) {
+  .apply-container {
+    padding: 25px;
+    margin: 20px;
+  }
+
+  .apply-title {
+    font-size: 26px;
+  }
+
+  .apply-form-title {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,159 @@
+/* AI TOOLS IMPROVED CARD DESIGN */
+/* HERO SECTION */
+.aitools-hero {
+  background: linear-gradient(135deg, #3f51b5, #7e57c2);
+  padding: 90px 20px;
+  text-align: center;
+  color: white;
+
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.aitools-title {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.aitools-subtitle {
+  font-size: 18px;
+  max-width: 700px;
+  margin: auto;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+.aitools-heading{
+      font-size: 30px;
+  color: #6d28d9;
+  font-weight: 700;
+  margin-bottom: 15px;
+  margin-top: 40px;
+}
+.aitools-text{
+font-size: 18px;
+  color: #374151;
+ 
+  margin: auto;
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* Tablet adjustments */
+@media (max-width: 992px) {
+  .aitools-title {
+    font-size: 40px;
+  }
+  .aitools-subtitle {
+    font-size: 17px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .aitools-hero {
+    padding: 65px 15px;
+  }
+  .aitools-title {
+    font-size: 32px;
+  }
+  .aitools-subtitle {
+    font-size: 15px;
+  }
+}
+
+.aitool-card {
+  background: #fff;
+  padding: 0; /* Removed default padding */
+  margin: 20px 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 3px solid transparent;
+background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 520px; /* Equal height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.aitool-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 26px rgba(0, 0, 0, 0.16);
+}
+
+/* IMAGE AREA */
+.aitool-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+
+  padding: 20px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Zoom Effect */
+.aitool-card:hover .aitool-image {
+  transform: scale(1.06);
+}
+
+/* CARD CONTENT */
+.aitool-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.aitool-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4A00E0;
+  margin-bottom: 10px;
+}
+
+.aitool-card p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.aitool-btn {
+  background: #4A00E0;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  margin: 10px auto;
+  display: block;
+  width: 140px;
+}
+
+.aitool-btn:hover {
+  background: #3200A8;
+}
+
+
+@media (min-width: 992px) {
+  .aitool-card {
+    min-height: 500px;
+  }
+}
+
+/* Tablet — 2 per row */
+@media (max-width: 991px) and (min-width: 576px) {
+  .aitool-card {
+    min-height: 540px;
+  }
+}
+
+/* Mobile — 1 per row */
+@media (max-width: 575px) {
+  .aitool-card {
+    min-height: 520px;
+  }
+}
