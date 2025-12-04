@@ -1,109 +1,150 @@
-/* FULL PAGE GRADIENT BACKGROUND */
+/* Background */
 .bg-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #4f46e5, #0ea5e9);
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(135deg, #4a00e0, #8e2de2);
   padding: 20px;
 }
 
-/* FORM GLASS CARD */
+/* Form */
 .form-container {
   width: 100%;
-  max-width: 420px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  border-radius: 18px;
-  padding: 35px 30px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  animation: fadeIn 0.4s ease-in-out;
+  max-width: 380px;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 14px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.6s ease-in-out;
 }
 
-/* ANIMATION */
+/* Fade animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-/* FORM TITLE */
+/* Title */
 .title {
   text-align: center;
-  color: #fff;
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: bold;
   margin-bottom: 25px;
+  color: #4a00e0;
 }
 
-/* LABELS */
-.nameLabel {
-  color: #fff;
-  font-weight: 500;
-  display: block;
-  margin-bottom: 6px;
-}
-
-/* INPUT FIELDS */
-.form-container input {
-  width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
+/* Input groups */
+.input-group {
   margin-bottom: 18px;
-  outline: none;
-  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  flex-direction: column;
+}
+
+.nameLabel {
   font-size: 14px;
-  transition: 0.3s;
+  margin-bottom: 6px;
+  color: #333;
+  font-weight: 500;
 }
 
-.form-container input:focus {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-  transform: scale(1.02);
-}
-
-/* LOGIN BUTTON */
-.loginBtn, .Regbtn {
+.input-group input {
   width: 100%;
   padding: 12px;
-  background: #0ea5e9;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.input-group input:focus {
+  border-color: #8e2de2;
+  box-shadow: 0px 0px 5px rgba(142, 45, 226, 0.4);
+}
+
+/* Password wrapper */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.show-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  color: #8e2de2;
+  font-weight: 600;
+}
+
+.show-btn:hover {
+  text-decoration: underline;
+}
+
+/* Button */
+.loginBtn {
+  width: 100%;
+  padding: 12px;
   border: none;
   border-radius: 10px;
-  color: white;
   font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-top: 10px;
-}
-
-.loginBtn:hover,
-.Regbtn:hover {
-  background: #0284c7;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-
-/* ERROR MESSAGE */
-.errorMsg {
-  color: red;
-  padding: 8px;
-  text-align: center;
-  font-size: 14px;
   margin-top: 10px;
   font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  cursor: pointer;
+  transition: 0.25s ease;
 }
 
+.loginBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
 
+.loginBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Error Message */
+.errorMsg {
+  color: red;
+  margin-top: 12px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Register link */
 .AlreadyReg {
-  color: #fff;
   text-align: center;
   margin-top: 18px;
   font-size: 15px;
 }
 
 .AlreadyReg a {
-  color: #ffe;
-  font-weight: bold;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.AlreadyReg a:hover {
   text-decoration: underline;
 }
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 25px 18px;
+  }
+  .title {
+    font-size: 22px;
+  }
+  .loginBtn {
+    font-size: 15px;
+  }
+}
+

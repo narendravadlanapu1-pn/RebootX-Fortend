@@ -9,6 +9,8 @@ class Loginpage extends Component {
     password: "",
     errMsg: "",
     redirectTo: "",
+    loading: false,
+    showPassword: false,
   };
 
   onChangeUsername = (event) => {
@@ -20,17 +22,17 @@ class Loginpage extends Component {
   };
 
   onSubmitFailure = (msg) => {
-    this.setState({ errMsg: msg });
+    this.setState({ errMsg: msg, loading: false });
   };
 
   onSubmitSuccess = (jwtToken, role, userId) => {
-    // Save everything to cookies
     Cookies.set("jwt_token", jwtToken, { expires: 7 });
     Cookies.set("role", role, { expires: 7 });
     Cookies.set("user_id", userId, { expires: 7 });
 
-    // Redirect based on role
-    if (role === "client") {
+    const userRole = role.toLowerCase();
+
+    if (userRole === "client") {
       this.setState({ redirectTo: "/dashboard" });
     } else {
       this.setState({ redirectTo: "/" });
@@ -39,16 +41,15 @@ class Loginpage extends Component {
 
   onSubmit = async (event) => {
     event.preventDefault();
-
     const { username, password } = this.state;
 
-    const userDetails = { username, password };
+    this.setState({ loading: true, errMsg: "" });
 
     try {
       const response = await fetch("https://rebootxbackend.onrender.com/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userDetails),
+        body: JSON.stringify({ username, password }),
       });
 
       const data = await response.json();
@@ -64,8 +65,20 @@ class Loginpage extends Component {
   };
 
   render() {
-    const { username, password, errMsg, redirectTo } = this.state;
+    const { username, password, errMsg, redirectTo, loading, showPassword } = this.state;
 
+    const token = Cookies.get("jwt_token");
+    const role = Cookies.get("role");
+
+    // Auto redirect if user already logged in
+    if (token) {
+      if (role === "client") {
+        return <Navigate to="/dashboard" replace />;
+      }
+      return <Navigate to="/" replace />;
+    }
+
+    // After successful login redirect
     if (redirectTo) {
       return <Navigate to={redirectTo} replace />;
     }
@@ -75,7 +88,6 @@ class Loginpage extends Component {
         <form className="form-container" onSubmit={this.onSubmit}>
           <h1 className="title">Welcome Back</h1>
 
-          {/* Username */}
           <div className="input-group">
             <label className="nameLabel">Username</label>
             <input
@@ -87,24 +99,36 @@ class Loginpage extends Component {
             />
           </div>
 
-          {/* Password */}
           <div className="input-group">
             <label className="nameLabel">Password</label>
-            <input
-              type="password"
-              value={password}
-              placeholder="Enter your password"
-              onChange={this.onChangePassword}
-              required
-            />
+
+            <div className="password-wrapper">
+              <input
+                type={showPassword ? "text" : "password"}
+                value={password}
+                placeholder="Enter your password"
+                onChange={this.onChangePassword}
+                required
+              />
+
+              <button
+                type="button"
+                className="show-btn"
+                onClick={() => this.setState({ showPassword: !showPassword })}
+              >
+                {showPassword ? "Hide" : "Show"}
+              </button>
+            </div>
           </div>
 
-          <button type="submit" className="loginBtn">Login</button>
+          <button type="submit" className="loginBtn" disabled={loading}>
+            {loading ? "Logging in..." : "Login"}
+          </button>
 
           {errMsg && <p className="errorMsg">{errMsg}</p>}
 
           <p className="AlreadyReg">
-            New user? <Link to="/register">Register</Link>
+           <Link to="/register"> New user? Register</Link>
           </p>
         </form>
       </div>

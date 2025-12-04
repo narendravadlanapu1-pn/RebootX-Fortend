@@ -32,11 +32,14 @@ class Registration extends Component {
 
     const userDetails = { username, password, role };
 
-    const response = await fetch("https://rebootxbackend.onrender.com/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(userDetails),
-    });
+    const response = await fetch(
+      "https://rebootxbackend.onrender.com/register",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userDetails),
+      }
+    );
 
     const data = await response.json();
 
@@ -59,43 +62,38 @@ class Registration extends Component {
         <form className="form-container" onSubmit={this.onSubmitForm}>
           <h1 className="title">RebootX Registration</h1>
 
-          {/* Username */}
           <div className="input-group">
-            <label htmlFor="name" className="nameLabel">Name</label>
+            <label className="nameLabel">Name</label>
             <input
               type="text"
-              id="name"
               placeholder="Enter your Name"
               onChange={(e) => this.setState({ username: e.target.value })}
               required
             />
           </div>
 
-          {/* Password */}
           <div className="input-group">
-            <label htmlFor="password" className="nameLabel">Password</label>
+            <label className="nameLabel">Password</label>
             <input
               type="password"
-              id="password"
               placeholder="Enter your Password"
               onChange={(e) => this.setState({ password: e.target.value })}
               required
             />
           </div>
 
-          {/* Confirm Password */}
           <div className="input-group">
-            <label htmlFor="confirm" className="nameLabel">Confirm Password</label>
+            <label className="nameLabel">Confirm Password</label>
             <input
               type="password"
-              id="confirm"
               placeholder="Confirm your Password"
-              onChange={(e) => this.setState({ confirmPassword: e.target.value })}
+              onChange={(e) =>
+                this.setState({ confirmPassword: e.target.value })
+              }
               required
             />
           </div>
 
-          {/* Role Selection */}
           <div className="input-group">
             <label className="nameLabel">Select Role</label>
             <select
@@ -107,12 +105,14 @@ class Registration extends Component {
             </select>
           </div>
 
-          <button type="submit" className="Regbtn">Register</button>
+          <button className="Regbtn" type="submit">
+            Register
+          </button>
 
           {errMsg && <p className="errorMsg">{errMsg}</p>}
 
           <p className="AlreadyReg">
-            Already Registered? <a href="/login">Login</a>
+          <a href="/login"> Already Registered? Login</a>
           </p>
         </form>
       </div>
