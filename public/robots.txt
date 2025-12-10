@@ -1,3 +1,8 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+Disallow: /dashboard
+Disallow: /dashboard/*
+Disallow: /jobs/apply/
+
+Sitemap: https://rebootx.co.uk/sitemap.xml
